@@ -1,7 +1,5 @@
-package Creational.Factory;
+package Creational.Factory.Classes;
 
-import Creational.Factory.Classes.AndroidDeveloper;
-import Creational.Factory.Classes.MERNDeveloper;
 import Creational.Factory.Interface.Developer;
 
 public class DeveloperFactory {
