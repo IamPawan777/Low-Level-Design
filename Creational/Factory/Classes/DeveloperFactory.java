@@ -19,9 +19,9 @@ public class DeveloperFactory {
         
 
         switch (DevType) {
-            case "ANDROID":
+            case "android developer":
                 return new AndroidDeveloper();
-            case "MERN": 
+            case "MERN Developer": 
                 return new MERNDeveloper();
             default: 
                 throw new IllegalArgumentException("Invalid type");

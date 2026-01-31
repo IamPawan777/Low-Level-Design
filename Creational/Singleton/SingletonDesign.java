@@ -26,7 +26,35 @@ package Creational.Singleton;
 
 
 
-// // 2. double checked locking............
+// // 2. Thread Safe........ Not safe in high-traffic apps
+// class DataBaseConnectionManager{
+    //     private static DataBaseConnectionManager instance;
+    
+//     private DataBaseConnectionManager(){}
+    
+//     public static synchronized DataBaseConnectionManager getInstance(){
+//         if(instance==null){
+//             instance=new DataBaseConnectionManager();
+//         }
+//         return instance;
+//     }
+// }
+
+// class Checker{
+//     public static void main(String[] args) {
+//         DataBaseConnectionManager obj1 = DataBaseConnectionManager.getInstance();
+//         DataBaseConnectionManager obj2 = DataBaseConnectionManager.getInstance();
+//         System.out.println(obj1==obj2);
+//     }
+// }
+                
+        
+
+
+
+// // 3. double checked locking............
+// FIRST LOCK -> check instance created or not || SECOND LOCK -> single thread create instance
+
 // public class SingletonDesign {
 //     public static class Singleton{
 //         private static volatile Singleton instance;
@@ -53,26 +81,3 @@ package Creational.Singleton;
 // }
 
 
-
-
-// 2. Thread Safe........
-class DataBaseConnectionManager{
-    private static DataBaseConnectionManager instance;
-    
-    private DataBaseConnectionManager(){}
-    
-    public static synchronized DataBaseConnectionManager getInstance(){
-        if(instance==null){
-            instance=new DataBaseConnectionManager();
-        }
-        return instance;
-    }
-}
-
-class Checker{
-    public static void main(String[] args) {
-        DataBaseConnectionManager obj1 = DataBaseConnectionManager.getInstance();
-        DataBaseConnectionManager obj2 = DataBaseConnectionManager.getInstance();
-        System.out.println(obj1==obj2);
-    }
-}
